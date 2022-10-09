@@ -12,8 +12,12 @@ Recursive algorithms for multiplying two large numbers. It accepts two strings w
 
 ## Merge Sort
 
-Famous recursive sorting algorithm. It has the time complexity of O(nlogn).
+Famous recursive sorting algorithm. It has the time complexity of _O(n log n)_.
 It accepts an array of numbers and returns a sorted version of it.
+
+## Count Inversions
+
+Based on Merge sort, counts the inversions of the array. As a sub-product, it also returns the sorted version of the input array. Has same time complexity as Merge Sort _O(n log n)_
 
 # Running the project
 
