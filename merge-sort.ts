@@ -1,10 +1,8 @@
-function merge(A, B) {
-  if (!B) return A;
-  if (!A) return B;
+function merge(A: number[], B: number[]) {
   let i = 0;
   let j = 0;
 
-  const C = [];
+  const C: number[] = [];
   for (let k = 0; k < A.length + B.length; k++) {
     if (A[i] < B[j] || j === B.length) {
       C.push(A[i]);
@@ -17,7 +15,7 @@ function merge(A, B) {
   return C;
 }
 
-function sort(C) {
+function sort(C: number[]): number[] {
   if (!C || C.length === 1 || C.length === 0) return C;
   const midIndex = Math.floor(C.length / 2);
   const A = C.slice(0, midIndex);
