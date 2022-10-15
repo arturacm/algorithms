@@ -24,10 +24,11 @@ function countAndMerge(A, B) {
 function countAndSort(C) {
   if (!C || C.length === 1 || C.length === 0)
     return { inversions: 0, numbers: C };
-  const k = (C.length + (C.length % 2)) / 2;
-  const A = C.splice(0, k);
+  const midIndex = Math.floor(C.length / 2);
+  const A = C.slice(0, midIndex);
+  const B = C.slice(midIndex);
   const { inversions: inversionsA, numbers: sortedA } = countAndSort(A);
-  const { inversions: inversionsB, numbers: sortedB } = countAndSort(C);
+  const { inversions: inversionsB, numbers: sortedB } = countAndSort(B);
   const { numbers, inversions } = countAndMerge(sortedA, sortedB);
   return {
     numbers,
