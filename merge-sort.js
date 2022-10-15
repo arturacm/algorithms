@@ -19,10 +19,11 @@ function merge(A, B) {
 
 function sort(C) {
   if (!C || C.length === 1 || C.length === 0) return C;
-  const k = (C.length + (C.length % 2)) / 2;
-  const A = C.splice(0, k);
+  const midIndex = Math.floor(C.length / 2);
+  const A = C.slice(0, midIndex);
+  const B = C.slice(midIndex);
   const sortedA = sort(A);
-  const sortedB = sort(C);
+  const sortedB = sort(B);
   return merge(sortedA, sortedB);
 }
 
