@@ -21,10 +21,10 @@ Based on Merge sort, counts the inversions of the array. As a sub-product, it al
 
 # Running the project
 
-This project is created in JavaScript. In order to run it you have to manually execute each algorithm using `node`.
+This project is created in TypeScript. The `.ts` files can be running the script followed by the algorithm file:
 
 ```
-node <filename.js>
+npm run start <filename.ts>
 ```
 
 # Credits
