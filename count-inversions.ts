@@ -1,10 +1,12 @@
-function countAndMerge(A, B) {
+type countAndMergeReturn = { inversions: number; numbers: number[] };
+
+function countAndMerge(A: number[], B: number[]): countAndMergeReturn {
   if (!B) return { inversions: 0, numbers: A };
   if (!A) return { inversions: 0, numbers: B };
   let i = 0;
   let j = 0;
 
-  const C = [];
+  const C: number[] = [];
   let inversions = 0;
   for (let k = 0; k < A.length + B.length; k++) {
     if (A[i] < B[j] || j === B.length) {
@@ -21,9 +23,9 @@ function countAndMerge(A, B) {
   return { inversions, numbers: C };
 }
 
-function countAndSort(C) {
-  if (!C || C.length === 1 || C.length === 0)
-    return { inversions: 0, numbers: C };
+function countAndSort(C: number[]): countAndMergeReturn {
+  if (C.length === 1 || C.length === 0) return { inversions: 0, numbers: C };
+
   const midIndex = Math.floor(C.length / 2);
   const A = C.slice(0, midIndex);
   const B = C.slice(midIndex);
