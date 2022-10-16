@@ -1,10 +1,10 @@
-function multiply(x, y) {
-  if (x < 10 && y < 10) {
-    return x * y;
+function multiply(x: string, y: string): string {
+  if (parseInt(x) < 10 && parseInt(y) < 10) {
+    return String(parseInt(x) * parseInt(y));
   }
 
-  let xString = x.toString().length % 2 ? `0${x.toString()}` : x.toString();
-  let yString = y.toString().length % 2 ? `0${y.toString()}` : y.toString();
+  let xString = x.length % 2 ? `0${x}` : x;
+  let yString = y.length % 2 ? `0${y}` : y;
 
   while (xString.length !== yString.length) {
     if (xString.length > yString.length) {
@@ -31,7 +31,7 @@ function multiply(x, y) {
   );
 }
 
-function multiplyPowerOf10(base, n) {
+function multiplyPowerOf10(base: string, n: number): string {
   let result = `${base}`;
   for (let i = 0; i < n; i++) {
     result += "0";
@@ -47,7 +47,7 @@ console.log(
   )
 );
 
-function sumTwoStrings(x, y) {
+function sumTwoStrings(x: string, y: string): string {
   let xString = x.toString();
   let yString = y.toString();
 
@@ -60,7 +60,7 @@ function sumTwoStrings(x, y) {
   }
 
   let result = "";
-  let partial;
+  let partial: number;
   let acc = 0;
   for (let i = xString.length - 1; i >= 0; i--) {
     partial = parseInt(xString[i]) + parseInt(yString[i]);
@@ -76,23 +76,20 @@ function sumTwoStrings(x, y) {
   return acc ? `1${result}` : result;
 }
 
-function subtractTwoStrings(x, y) {
-  let xString = x.toString();
-  let yString = y.toString();
-
-  while (xString.length !== yString.length) {
-    if (xString.length > yString.length) {
-      yString = `0${yString}`;
+function subtractTwoStrings(x: string, y: string): string {
+  while (x.length !== y.length) {
+    if (x.length > y.length) {
+      y = `0${y}`;
     } else {
-      xString = `0${xString}`;
+      x = `0${x}`;
     }
   }
 
   let result = "";
-  let partial;
+  let partial: number;
   let acc = 0;
-  for (let i = xString.length - 1; i >= 0; i--) {
-    partial = parseInt(xString[i]) - parseInt(yString[i]);
+  for (let i = x.length - 1; i >= 0; i--) {
+    partial = parseInt(x[i]) - parseInt(y[i]);
 
     if (partial - acc < 0) {
       result = `${partial + 10 - acc}${result}`;
