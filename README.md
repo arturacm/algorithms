@@ -19,6 +19,10 @@ It accepts an array of numbers and returns a sorted version of it.
 
 Based on Merge sort, counts the inversions of the array. As a sub-product, it also returns the sorted version of the input array. Has same time complexity as Merge Sort _O(n log n)_
 
+## Closest Pair
+
+In a X and Y plane, returns the closest distance between two pairs based on the Euclidean distance (straight line). Uses the Merge Sort for pre-processing the input. Has the time complexity of _O(n log n)_
+
 # Running the project
 
 This project is created in TypeScript. The `.ts` files can be running the script followed by the algorithm file:
